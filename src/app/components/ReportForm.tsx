@@ -1,4 +1,5 @@
 'use client';
+import PublishedCard from '@/components/share/PublishedCard';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { api, enablePush, uploadPhoto } from '@/lib/client';
@@ -9,6 +10,7 @@ import LocationField from '@/components/LocationField';
 const toLocalInput = (d: Date) => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
 
 export default function ReportForm({ kind }: { kind: 'lost' | 'found' }) {
+  const [createdId, setCreatedId] = useState<string | null>(null);
   const { session } = useRequireAuth();
   const router = useRouter();
   const lost = kind === 'lost';
@@ -42,11 +44,13 @@ export default function ReportForm({ kind }: { kind: 'lost' | 'found' }) {
         happened_at: new Date(when).toISOString(),
       });
       await pushReady;
-      router.replace(`/ocorrencia/${id}`);
+      setCreatedId(id);
     } catch (e: any) {
       setErr(e.message); setBusy(false);
     }
   }
+
+  if (createdId) return <PublishedCard id={createdId} />;
 
   return (
     <>

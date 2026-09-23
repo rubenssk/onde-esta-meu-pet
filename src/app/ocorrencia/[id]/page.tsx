@@ -1,4 +1,5 @@
 'use client';
+import ShareActions from '@/components/share/ShareActions';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
@@ -104,6 +105,8 @@ export default function Ocorrencia() {
             {lost ? `🎉 ${r.pet_name} foi encontrado` : '✅ Tutor encontrado — encerrar'}
           </button>
         )}
+
+        {r.status === 'open' && <ShareActions report={r} variant="page" />}
 
         <h2>Linha do tempo</h2>
         {events.length === 0 && <p className="meta">Os vizinhos já foram avisados. Você receberá uma notificação a cada novidade. 🔔</p>}

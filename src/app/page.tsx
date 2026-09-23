@@ -96,6 +96,7 @@ export default function Home() {
           </div>
           <div className="actionArrow">→</div>
         </Link>
+        <p className="near-hint">Receba alertas e ajude animais da sua região.</p>
 
       </section>
 

@@ -376,3 +376,163 @@ footer button{background:none;border:0;color:inherit;text-decoration:underline;f
   color: var(--brand);
   font-weight: 700;
 }
+
+/* =========================================
+   HOME — SEGUNDA CAMADA VISUAL
+   ========================================= */
+
+.homeHero {
+  padding-top: 42px;
+  padding-bottom: 32px;
+}
+
+.heroLogo {
+  animation: floatPet 3.5s ease-in-out infinite;
+}
+
+@keyframes floatPet {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.homeHero h1 {
+  text-wrap: balance;
+}
+
+/* Cards mais premium */
+
+.actionCard {
+  min-height: 92px;
+  border: 1px solid #ffffff22;
+  box-shadow:
+    0 12px 30px #00000016,
+    inset 0 1px 0 #ffffff22;
+}
+
+.actionCard:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 34px #0000001c,
+    inset 0 1px 0 #ffffff25;
+}
+
+/* PETS PERTO = principal ação */
+
+.actionNear {
+  min-height: 112px;
+  order: 3;
+  box-shadow:
+    0 14px 32px #3b5bdb35,
+    inset 0 1px 0 #ffffff30;
+}
+
+.actionNear .actionIcon {
+  width: 60px;
+  height: 60px;
+  font-size: 31px;
+}
+
+.actionNear .actionText strong {
+  font-size: 1.12rem;
+}
+
+.actionNear::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  right: -65px;
+  bottom: -90px;
+  background: #ffffff12;
+}
+
+/* Pequeno efeito de atenção */
+
+.actionNear .actionArrow {
+  animation: arrowMove 1.8s ease-in-out infinite;
+}
+
+@keyframes arrowMove {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(5px); }
+}
+
+/* Ícones */
+
+.actionIcon {
+  box-shadow: inset 0 1px 0 #ffffff22;
+}
+
+/* Notificação mais destacada */
+
+.notificationCard {
+  position: relative;
+  overflow: hidden;
+}
+
+.notificationCard::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  right: -55px;
+  top: -55px;
+  background: #ff6b3510;
+}
+
+.notificationButton {
+  transition: transform .15s ease, box-shadow .15s ease;
+  box-shadow: 0 5px 12px #ff6b3530;
+}
+
+.notificationButton:active {
+  transform: scale(.97);
+}
+
+/* Ocorrências */
+
+.reportCard {
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.reportCard:active {
+  transform: scale(.985);
+}
+
+.reportCard img {
+  box-shadow: 0 3px 10px #00000012;
+}
+
+/* Entrada suave */
+
+.homeHero,
+.homeActions,
+.notificationCard,
+.myReports {
+  animation: homeFade .45s ease both;
+}
+
+.homeActions {
+  animation-delay: .05s;
+}
+
+.notificationCard {
+  animation-delay: .1s;
+}
+
+.myReports {
+  animation-delay: .15s;
+}
+
+@keyframes homeFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

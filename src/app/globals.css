@@ -536,3 +536,281 @@ footer button{background:none;border:0;color:inherit;text-decoration:underline;f
     transform: translateY(0);
   }
 }
+
+/* =========================================
+   TELAS INTERNAS — VISUAL UNIFICADO
+   PERDI / ENCONTREI / PERTO
+   ========================================= */
+
+/* TOP BAR */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 62px;
+  padding: 10px 16px;
+  background: #fffaf7dd;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e6dcd355;
+}
+
+.topbar a {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 1.45rem;
+  box-shadow: 0 4px 14px #0000000b;
+}
+
+.topbar b {
+  font-size: 1.05rem;
+  letter-spacing: -.02em;
+}
+
+/* CONTEÚDO */
+
+.content {
+  padding: 18px 16px 28px;
+}
+
+/* CAMPOS */
+
+.field {
+  margin: 21px 0;
+}
+
+.field > label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: .88rem;
+  font-weight: 800;
+  letter-spacing: -.01em;
+}
+
+input,
+textarea {
+  border: 1.5px solid #e2d8d0;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px #00000008;
+  transition:
+    border-color .15s ease,
+    box-shadow .15s ease,
+    transform .15s ease;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px #ff6b3514;
+}
+
+/* FOTO */
+
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  margin: 4px 0 24px;
+  border: 0;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 50% 30%, #fff 0, #fff5ef 65%, #ffede3 100%);
+  box-shadow:
+    0 10px 28px #0000000d,
+    inset 0 0 0 1px #e6dcd388;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.photo:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 32px #00000012,
+    inset 0 0 0 1px #e6dcd388;
+}
+
+.photo span {
+  color: var(--brand);
+  gap: 10px;
+}
+
+.photo span:first-child {
+  font-size: 48px;
+}
+
+.photo b {
+  color: var(--ink);
+  font-size: .92rem;
+}
+
+/* ESCOLHAS */
+
+.chips {
+  gap: 9px;
+}
+
+.chip {
+  padding: 11px 15px;
+  border: 1.5px solid #e2d8d0;
+  background: #fff;
+  border-radius: 14px;
+  font-size: .88rem;
+  box-shadow: 0 3px 10px #00000007;
+  transition: all .15s ease;
+}
+
+.chip:active {
+  transform: scale(.97);
+}
+
+.chip.on {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #fff;
+  box-shadow: 0 6px 15px #00000016;
+}
+
+/* BOTÕES PRINCIPAIS */
+
+.btn {
+  min-height: 58px;
+  border-radius: 17px;
+  margin-top: 18px;
+  box-shadow: 0 8px 20px #00000012;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 11px 24px #00000018;
+}
+
+.btn:active {
+  transform: scale(.985);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #ff7541, #f25326);
+}
+
+.btn.ok {
+  background: linear-gradient(135deg, #3cba62, #279447);
+}
+
+/* ERROS */
+
+.err {
+  padding: 13px 14px;
+  border-radius: 14px;
+  background: #fff0f0;
+  border: 1px solid #e5484d22;
+}
+
+/* MAPA */
+
+.map {
+  border-radius: 22px;
+  margin: 4px 0 16px;
+  box-shadow:
+    0 10px 28px #00000012,
+    inset 0 0 0 1px #ffffff55;
+}
+
+/* FILTRO / RAIO */
+
+.row {
+  margin: 10px 0 18px;
+}
+
+.row .chips {
+  width: 100%;
+}
+
+.row .chip {
+  flex: 1;
+  text-align: center;
+  min-width: 0;
+}
+
+/* TÍTULOS DAS LISTAS */
+
+.content h2 {
+  margin: 20px 0 12px;
+  font-size: 1.25rem;
+  letter-spacing: -.03em;
+}
+
+/* CARDS DE PET */
+
+.card {
+  position: relative;
+  gap: 13px;
+  padding: 10px;
+  margin-bottom: 11px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 5px 17px #0000000b;
+  border: 1px solid #e6dcd355;
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.card:active {
+  transform: scale(.985);
+}
+
+.card img,
+.card .emoji {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+}
+
+.card .t {
+  font-size: .94rem;
+}
+
+.card .s {
+  margin-top: 4px;
+  line-height: 1.35;
+}
+
+/* BADGES */
+
+.badge {
+  padding: 5px 9px;
+  margin: 0 0 5px;
+  border-radius: 8px;
+  font-size: .63rem;
+  letter-spacing: .04em;
+}
+
+/* TEXTO DE GPS */
+
+.meta {
+  line-height: 1.45;
+}
+
+/* CELULAR */
+
+@media (max-width: 380px) {
+  .content {
+    padding-left: 13px;
+    padding-right: 13px;
+  }
+
+  .chip {
+    padding: 10px 11px;
+    font-size: .82rem;
+  }
+
+  .photo {
+    border-radius: 19px;
+  }
+}

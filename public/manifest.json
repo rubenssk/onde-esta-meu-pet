@@ -1,0 +1,9 @@
+{
+  "name": "Onde Está Meu Pet?",
+  "short_name": "Meu Pet",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fff8f3",
+  "theme_color": "#ff6b35",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

@@ -46,7 +46,7 @@ export default function Entrar() {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: 'google',
       options: {
-        redirectTo: `${location.origin}/entrar?next=${encodeURIComponent(nextPath())}`,
+        redirectTo: `${location.origin}/auth/callback?next=${encodeURIComponent(nextPath())}`,
       },
     });
 
